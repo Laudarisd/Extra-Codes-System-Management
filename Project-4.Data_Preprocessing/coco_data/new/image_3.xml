@@ -1,0 +1,38 @@
+<annotation>
+	<folder>train_images</folder>
+	<filename>image_3.png</filename>
+	<path>/home/test/Desktop/context_detector_program/image_3.png</path>
+	<source>
+	 	<database>Unknown</database>
+	</source>
+	<size>
+	    <width>3000</width>
+	    <height>3000</height>
+	    <depth>3</depth>
+	</size>
+    <segmented>0</segmented>
+	<object>
+	    <name>maritime vessels</name>
+	    <pose>Unspecified</pose>
+	    <truncated>0</truncated>
+	    <difficult>0</difficult>
+		<bndbox>
+		    <xmin>530</xmin>
+		    <ymin>111</ymin>
+		    <xmax>607</xmax>
+		    <ymax>250</ymax>
+		</bndbox>
+	</object>
+	<object>
+	    <name>maritime vessels</name>
+	    <pose>Unspecified</pose>
+	    <truncated>0</truncated>
+	    <difficult>0</difficult>
+		<bndbox>
+		    <xmin>491</xmin>
+		    <ymin>117</ymin>
+		    <xmax>552</xmax>
+		    <ymax>227</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,3 @@
+object
+galbae_pet
+coca_cola

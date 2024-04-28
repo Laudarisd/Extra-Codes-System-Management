@@ -1,0 +1,124 @@
+import operator
+
+"""Answer of C1"""
+
+
+"""@author: sudip
+
+Given a string, find the second most frequent vowel letter. E.g. 'abcdeeeooauiea' -> a
+"""
+
+
+
+
+if __name__ == '__main__':
+      rank = {"a" : 0,
+            "e" : 0,
+            "i" : 0,
+            "o" : 0,
+            "u" : 0};
+str = "aaakjjjkbeeouyhgb"
+for index in range (0,len(str)):
+#print(str[index])
+  if str[index] in ['a','e','i','0','u'] :
+        if str[index] in rank:
+            count = rank.get(str[index])
+            count = count +1
+            rank[str[index]] = count;
+            sorted_rank = sorted(rank.items(), key=operator.itemgetter(1))
+            print (sorted_rank[3][0])
+            print (sorted_rank)
+
+
+# second most frequent vowel is letter e.
+---------------------------------------------------------------------------------------------------------------------------------------
+"""Answwer of M1"""
+
+"""
+Created on Mon Jul 23 23:44:29 2019
+
+@author: sudip
+A traveler is departing point A toward point B with a constraint: the traveler must touch the horizontal
+line during the trip.
+What is the distance of shortest path for the traveler?(fiogure is not included here)
+"""
+
+
+from math import sqrt
+
+if __name__ == '__main__':
+
+    for x in range (1,10):
+        print (x)
+        print( sqrt(8 ** 2 + x ** 2) + sqrt(8 ** 2 + (10-x) ** 2))
+        
+# Answer is 18.944.It seems that point is median when we get shortest distance to travel to point B. 
+
+# I used pythagoras theorem to solve the problem with iteration process becasue the base of the figure is undefined though its total length is 10. 
+# I assume that the one part of base is x and another is 10 - x. Although x is constrain,I only used the range of x from 1 to 10.    
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+"""Answer of p1"""
+
+
+"""
+Created on Mon Jul 24 13:41:38 2019
+
+@author: sudip
+
+Attached .csv file has 1000 rows and four columns (from the left, A, B, C, and D). Please build a good model which explains Column D by a function of Column A, Column B and Column C.
+"""
+
+# Note= the following code : df = we need data, I used this code in python and used the data which was sent by email.
+# To run the code you need data P1 regression.csv otherwise it will say that df ios not defined 
+
+
+import matplotlib.pyplot as plt
+import pandas as pd
+import pylab as pl
+import numpy as np
+%matplotlib inline
+
+df = pd.read_csv("P1 regression.csv", header=None, names=["A", "B", "C", "D"])
+# required data to run this code
+df.head()
+
+plt.scatter(df.A, df.D,  color='blue')
+plt.xlabel("A")
+plt.ylabel("D")
+plt.show()
+
+# I wanted to see the plot of data with respect to A and D. 
+# Similarly I used same process to plot B and D, C and D and checked what kind of functions are they.
+
+plt.scatter(df.B, df.D,  color='blue')
+plt.xlabel("B")
+plt.ylabel("D")
+plt.show()
+plt.scatter(df.C, df.D,  color='blue')
+plt.xlabel("C")
+plt.ylabel("D")
+plt.show()
+
+#train and test the data 
+msk = np.random.rand(len(df)) < 0.8
+train = df[msk]
+test = df[~msk]
+train.head()
+
+y_hat= regr.predict(test[['A','B','C']])
+x = np.asanyarray(test[['A','B','C']])
+y = np.asanyarray(test[['D']])
+print("Residual sum of squares: %.2f"
+      % np.mean((y_hat - y) ** 2))
+
+# Explained variance score: 1 is perfect prediction
+print('Variance score: %.2f' % regr.score(x, y))
+
+# D = (-396.58529616) A + (140.85609763) B + (1.57932998) C
+
+""" Please build a good model which explains Column D by a function of Column A, Column B and Column C. """
+""" answer is >>>  D = (-396.58529616) A + (140.85609763) B + (1.57932998) C """
+
+# this is the required answer
+

@@ -1,0 +1,466 @@
+
+"""
+Python exercise to upgrade your skill
+Author: Laudari Sudip
+source : https://www.w3resource.com/python-exercises/python-basic-exercises.php
+I would like to thank to w3resource webpage for great python  exercise
+
+Last edited: 10 december 2019
+"""
+
+
+
+
+
+"""Q.1 write a python program to print the following string in a specific format"""
+
+
+print("Twinkle, twinkle, little star, "
+      "\n\tHow I wonder what you are! "
+      "\n\t\tUp above the world so high, "
+      "\n\t\tLike a diamond in the sky. "
+      "\nTwinkle, twinkle, little star, "
+      "\n\tHow I wonder what you are!")
+
+
+#-----------------------------------------------------------------------------------------------------------
+"""Q.2 write a python program to print the python version you are using """
+
+import sys
+print("python version")
+print(sys.version)
+print("Version info")
+print(sys.version_info)
+
+
+
+
+#-------------------------------------------------------------------------------------------------------
+
+""" Q.3 Write a python program to display the current date and time"""
+
+import datetime
+now = datetime.datetime.now()
+print("current date and time: ")
+print(now.strftime("%Y - %m - %d %H: %M: %S"))
+
+#--------------------------------------------------------------------------------------------------
+""" Q.4 write a python program which accepts the radius of a circle from the user and compute the area  """
+
+from math import pi
+r = float(1.1)
+A = pi * r **2
+print(A)
+#print ("The area of the circle with radius " + str(r) + " is: " + str(pi * r**2))
+
+
+#----------------------------------------------------------------------------------------------
+""" Q.5 write a python program which accepts a sequence of comma- separated numbers from user and generate a list 
+and a tuple with those numbers """
+
+values = input(" Input some comma separated numbers: 3,5,7,23 ")
+list = values.split(",")
+tuple = tuple(list)
+print('List:', list)
+print('Tuple:', tuple)
+
+
+#---------------------------------------------------------------------------------------------------------
+""" Q.6 write a python program which accepts the user's first and last name 
+and print them in reverse order with a space between them.
+"""
+
+fname = input("Input your First Name:A ")
+lname = input("Input your Last Name:B ")
+print("Hello"+lname + ""+fname)
+
+#-----------------------------------------------------------------------------------------------------------------
+"""Q.7 write a python program to accept a filename from the user and print the extension of that
+"""
+
+file_name = input("Input the file name: ")
+f_extns = file_name.split(".")
+print(" the extension of the file is : " + repr(f_extns) )
+
+#--------------------------------------------------------------------------------------------------
+""" Q.8 write a python program to display the first and last colors from the following list"""
+
+
+
+color_list = ["Red", "Green", "White", "Black"]
+print(color_list[0])
+print(color_list[-1])
+print(color_list[0],color_list[-1])
+
+#------------------------------------------------------------------------------------------------------
+# Q.9 write a python a program to display the examination schedule
+
+ exam_st_date = (11,12,2014)
+ print( "The examination will start from : %i / %i / %i"%exam_st_date)
+
+#--------------------------------------------------------------------------------------------------------------
+""" Q.10 Write a python program that accepts an integer(n) and computes the value of n+nn+nnn"""
+
+a = int(input("Input an integer: 5"))
+n1 = int("%s"% a)
+n2 = int("%s%s" %(a,a))
+n3 = int("%s%s%s"%(a,a,a))
+print(n1+n2+n3)
+#---------------------------------------------------------------------------------------------------------------
+# Q.11. find square number
+def get_square_gen(n):
+    for x in range(n):
+        yield x**2
+print(get_square_gen(5))
+#---------------------------------------------------------------------------------------------------------
+# 12. write a python program to print the calendar of a given month and year
+import calendar
+y = int(input("Input the year : "))
+m = int(input("Input the month : "))
+print(calendar.month(y, m))
+#---------------------------------------------------------------------------------------------------------
+# 13. write a python program to print the following here document:
+
+print(""" a string that you don't have to escape
+      This
+      is a ..............multiple-line
+      heredoc string --------> example
+      """)
+#--------------------------------------------------------------------------------------------------------------
+# 14. write a python program to calculate number of days between two dates:
+from datetime import date
+f_date = date(2014,7,2)
+l_date = date(2016, 7, 11)
+b_date = l_date - f_date
+print(b_date)
+#-----------------------------------------------------------------------------------------------
+# 15. write a python program to get the volume of the sphere with radius 6
+volume of sphere : 4/3* pi * radius *3
+from math import pi
+r = 6
+v_sphere = 4/3 * pi * r**3
+print('the volume of sphere is ',v_sphere)
+#---------------------------------------------------------------------------------------------------------
+"""16. write a python program to get the difference between a given number and 17, if the number is greater than
+17 return double the absolute difference."""
+
+def difference(n):
+    if n <= 17:
+        return 17 - n
+    else:
+        return (n-17) *2
+
+print(difference(22))
+print(difference(15))
+
+#---------------------------------------------------------------------------------------------------------------------
+# 17. write a python program to test whether a number is within 100 of 1000 or 2000.
+
+def near_thousand(n):
+    return ((abs(1000 -n)<= 100) or (abs(2000 - n)<= 100))
+print(near_thousand(1000))
+print(near_thousand(2100))
+print(near_thousand(800))
+print(near_thousand(2200))
+#------------------------------------------------------------------------------------------------------------
+# 18. write a python program to calculate the sum of three given numbers, if the values are equal then return
+# three times of their sum
+
+def sum_trice(x,y,z):
+    sum = x + y + z
+
+    if x == y == z:
+        sum = sum *3
+        return sum
+
+print(sum_trice(1,2,3))
+print(sum_trice(3,3,3))
+
+#--------------------------------------------------------------------------------------------------------------
+# 19. write a python program to get a new string from a given  string where "Is" has been added to the front.
+# If the given string already begins with "Is" then return the string unchanged
+
+def new_string(str):
+    if len(str) >= 2 and str[:2]== "Is":
+        return str
+    return "Is" +str
+print( new_string("df "))
+print(new_string("Isapp"))
+
+#-------------------------------------------------------------------------------------------------------------------
+# 20. write a python program to find whether a given number is even or odd, print out an appropriate message to the user.
+num = int(input("Enter a number: "))
+mod = num % 2
+if mod > 0:
+    print("This is an odd number.")
+else :
+    print("This is an even number")
+#------------------------------------------------------------------------------------------------------------
+
+#21. write a python program to get a string which is n(non-negative integer) copies of a given string
+
+def larger_string(str, n):
+    result = ""
+    for i in range(n):
+        result = result + str
+    return result
+
+print(larger_string('abc', 5))
+#--------------------------------------------------------------------------------------------------------------
+# # 22. write a python program to count the number 4 in the given list
+def list_count_4(nums):
+    count = 0
+    for num in nums:
+         if num == 4:
+             count = count + 1
+    return count
+
+print(list_count_4([1,4,5,6,7,8,9,4]))
+#-----------------------------------------------------------------------------------------------------------
+# # 23. write a python program to get the n (non-negative integer) copies of the first 2 characters of a given string.
+# # Return the n copies of the whole string if the length is less than
+#
+def substring_copy(str, n):
+    flen = 2
+    if flen > len(str):
+        flen = len(str)
+        substr = str[:flen]
+        result = ""
+        for i in range(n):
+            result = result + substr
+        return  result
+print(substring_copy('mnop', 2))
+#---------------------------------------------------------------------------------------------------------------
+# #24. write a python program to test whether a passed letter is a vowel or not
+
+def is_vowel(char):
+    vowels = 'aeiou'
+    return  char in vowels
+print(is_vowel('c'))
+#------------------------------------------------------------------------------------------------------------
+# 25. write a python program to check whether a specified value is contained in a group of values.
+
+def is_group_number(data, n):
+    for value in data:
+        if n == value:
+            return True
+    return  False
+print(is_group_number([1,4,5,6], 5))
+#----------------------------------------------------------------------------------------------------------
+#26. write a python program to create a histogram from a given list of integers
+def histogram(items):
+    for n in items:
+        output = ''
+        times = n
+        while (times > 0):
+            output += '*'
+            times = times -1
+        print(output)
+histogram([2,3,5,6,7])
+#--------------------------------------------------------------------------------------------------------------
+#27  write a python program to concatenate all elements in a list into a string and return
+
+def concatenate_list_data(list):
+    result = ''
+    for element in list:
+        result += str(element)
+    return result
+print(concatenate_list_data([1,3,12,4]))
+#-----------------------------------------------------------------------------------------------------------------
+# 28. write a python program to print all even numbers from a given numbers list in the same order and stop the
+# printing if any numbers that come after 237 in the sequence
+
+numbers = [
+    386, 462, 47, 418, 907, 344, 236, 375, 823, 566, 597, 978, 328, 615, 953, 345,
+    399, 162, 758, 219, 918, 237, 412, 566, 826, 248, 866, 950, 626, 949, 687, 217,
+    815, 67, 104, 58, 512, 24, 892, 894, 767, 553, 81, 379, 843, 831, 445, 742, 717,
+    958,743, 527
+    ]
+for x in numbers :
+    if x == 237 :
+        print (x)
+        break
+    elif x % 2 == 0:
+        print(x)
+
+#----------------------------------------------------------------------------------------------------
+
+
+# 29. write a python program to print out a set containing all the colors from color_list_1 which are not present in
+# color_list_2.
+
+color_list_1 = set(["White", "Black", "Red"])
+color_list_2 = set(["Red", "Green"])
+print(color_list_1.difference(color_list_2))
+
+#30. write a python program that will accept the base and height of a triangle and compute the area
+b = int(input("The base of the triangle: "))
+h = int(input("The height of the triangle: "))
+A = b* h/2
+print(A)
+#-----------------------------------------------------------------------------------------------------
+#31. write a python program to get the greatest common divisor(GCD) of two positive integers
+
+def gcd(x,y):
+    gcd = 1
+    if x % y == 0:
+        return y
+    for k in range(int(y/2),0,-1):
+        if x % k == 0 and y % k == 0:
+            gcd = k
+            break
+    return gcd
+print(gcd(12,17))
+print(gcd(10,20))
+print(gcd(60,80))
+#----------------------------------------------------------------------------------------------------------
+#32. write a python program to get the least common multiple(LCM) of two positive integers
+
+def lcm(x, y):
+    if x > y:
+        z = x
+    else:
+        z = y
+    while(True):
+        if((z% x == 0) and (z % y == 0)):
+            lcm = z
+            break
+        z =+ 1
+    return  lcm
+print(lcm(4 ,6))
+ print(lcm(15, 17))
+print(lcm(90, 30))
+
+#-----------------------------------------------------------------------------------------------------------
+
+# 33. write a python program to sum up three given integers. However, if two values are equal sum will be zero
+
+def sum(x,y,z):
+    if x == y or y==z  or x== z:
+        sum = 0
+    else:
+        sum = x+y+z
+    return sum
+
+print(sum(2,1,2))
+print(sum(2,4,5))
+#-------------------------------------------------------------------------------------------------------------
+# 34. write a python program to sum of two given integers, However, if the sum is between 15 to 20 it will return 20
+
+def sum(x,y):
+    sum = x + y
+    if sum in range(15, 20):
+        return 20
+    else:
+        return sum
+
+print(sum(10,6))
+print(sum(30,40))
+print(sum(10,2))
+#--------------------------------------------------------------------------------------------------------------
+# 35 write a python program to add two objects if both objects are an integer type
+def add_number(a ,b):
+    if not (isinstance(a,int) and isinstance(b,int)):
+        raise TypeError("INputs must be integers")
+    return a+b
+print(add_number(10,20))
+#--------------------------------------------------------------------------------------------------------------
+# 36.write a python program that will return true if the two given integer value or their sum or difference is 5
+
+def test_num(x,y):
+    if x == y or abs(x-y) == 5 or (x+y) == 5:
+        return  True
+    else:
+        return False
+
+print(test_num(7,2))
+
+#---------------------------------------------------------------------------------------------------------------
+# 37.write a python program to display your details like name, age, address in three different lines
+
+def personal_details():
+    name, age = "Simon", 19
+    address = "Seoul, Korea"
+    print("Name:{}\nAge: {}\nAddress:{}".format(name, age, address))
+personal_details()
+
+#-------------------------------------------------------------------------------------------------------------
+# 38. write a python program to solve (x+y)*(x+y)
+x = 4
+y = 3
+result = x**2 +2 *x*y + y ** 2
+print(result)
+
+#---------------------------------------------------------------------------------------------------------------
+# 39.write a python program to compute the distance between the points(x1, y1), (x2, y2)
+
+import math
+p1 = [4, 0]
+p2 = [6,6]
+
+distance = math.sqrt(((p1[0]-p2[0])**2) + ((p1[1]-p2[1])**2))
+print(distance)
+#---------------------------------------------------------------------------------------------------------------
+
+
+# 40.write a python program to check whether a file exists
+import os
+open('abc.txt','w')
+print(os.path.isfile('abc.txt'))
+
+#--------------------------------------------------------------------------------------------------------------
+# 41. write a python program to determine if a python shell is exwcuting in 32 bit or 64 bit mode on OS
+
+import struct
+print(struct.calcsize("p") * 8)
+#---------------------------------------------------------------------------------------------------------------
+# 42.write a python program to get OS name, platform and release information
+import platform
+import os
+print(os.name)
+print(platform.system())
+print(platform.release())
+#----------------------------------------------------------------------------------------------------------
+# 43. write a python program to locate site-packages
+import site
+print(site.getsitepackages())
+#---------------------------------------------------------------------------------------------------------------
+# 44.write a python program to call an external command in python
+
+from subprocess import call
+call(["ls","-l"])
+# --------------------------------------------------------------------------------------------------
+# 45. write a python program to get the path and name of the file that is currently executing
+
+import os
+print("Current File name: ", os.path.realpath(__file__))
+# -------------------------------------------------------------------------------------------------------
+# 46. write a python program to find out the number of CPUs using
+import multiprocessing
+print(multiprocessing.cpu_count())
+# -----------------------------------------------------------------------------------------------------
+# 47. write a python program to parse a string to Float or Integer
+n = "245.2455"
+print(float(n))
+print(int(float(n)))
+#----------------------------------------------------------------------------------------------------------
+# 48. write a python program to list all files in a directory in python
+from os import listdir
+from os.path import isfile, join
+files_list = [f for f in listdir('/home/sudip') if isfile(join('/home/sudip',f))]
+print(files_list)
+# -----------------------------------------------------------------------------------------------
+# 49. write a python program to print without newline or space
+for i in range(0,10):
+    print('*', end ='')
+print("\n")
+# ----------------------------------------------------------------------------------------------------------
+# 50. Write a Python program to determine profiling of Python programs.................
+
+import cProfile
+def sum():
+    print(1+2)
+cProfile.run('sum()')
+#-------------------------------------------------------------------------------------------------------------
+
+

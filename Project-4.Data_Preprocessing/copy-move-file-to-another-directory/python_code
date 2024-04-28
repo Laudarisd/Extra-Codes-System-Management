@@ -1,0 +1,35 @@
+# import libraries
+from os import makedirs
+import shutil
+import glob
+import os, sys
+import cv2
+from PIL import Image , ImageOps
+
+# import images and write the path where you want to copy/move
+img_path = "./data"
+save_root_path = "./copy"
+folders_list = sorted(os.listdir(img_path))
+
+
+# check saving directory
+def filecheck(path):
+    if not os.path.exists(path):
+        try:
+            os.makedirs(path)
+            print ('create' + path)
+        except OSError as e:
+            if e.errno != e.errno.EEXIST:
+                raise
+
+# open all the images                
+for images in folders_list:
+    original_folder_path = os.path.join(img_path, images)
+    copy_folder_path = os.path.join(save_root_path, os.path.splitext(images)[0]) #name new folders as image name 
+    filecheck(copy_folder_path)
+    copy_img_path = os.path.join(copy_folder_path, images)
+    try:
+        shutil.copyfile(original_folder_path, copy_img_path) # copy original file to desire path.If you want to move then write shutil.move 
+    except Exception as ex:
+        print("ERROR : " + str(ex))
+    

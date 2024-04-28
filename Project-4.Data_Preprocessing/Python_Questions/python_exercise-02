@@ -1,0 +1,210 @@
+""" Thank you for the best webpage : https://www.w3resource.com/python-exercises/basic/
+
+if you would like to practice more exercise you can go to above source.
+
+created: 10th december 2019
+laudari Sudip 
+
+"""
+
+
+
+
+
+# 1. write a python program to print to stderr
+# from __future__ import  print_function
+# import sys
+#
+# def eprint(*args, **kwargs):
+#     print(*args, file =sys.stderr, **kwargs)
+# eprint("abc", "efg", "xyz", sep = "--")
+
+#----------------------------------------------------------------------------------------------
+#2. write a python program to access environment variables
+# import os
+# # access all environment variables
+# print(os.environ)
+# print('*---------------------------*')
+# print(os.environ['Home'])
+# ---------------------------------------------------------------------------------------------
+# 3. write the python program to get the current username
+# import getpass
+# print(getpass.getuser())
+# ----------------------------------------------------------------------------------------
+#4. write a python program to get height and width of the console window
+# def terminal_size():
+#     import fcntl, termios, struct
+#     th, tw, hp, wp = struct.unpack('HHHH' ,
+#         fcntl.ioctl(0, termios.TIOCGWINSZ,
+#         struct.pack('HHHH',0,0,0,0)))
+#     return tw, th
+# print('Number of columns and Rows: ', terminal_size)
+# -----------------------------------------------------------------------------------------------------
+#5. write a python program to sum of the fist n positive integers
+
+# n = int(input("Input a number: "))
+# sum_num = (n * (n+1))/2
+# print(sum_num)
+
+#----------------------------------------------------------------------------------------------
+
+#6. write a python program to calculate the hypotenuse of a right angled triangle
+from math import sqrt
+
+base = 4
+height = 6
+hypotenus = sqrt(base **2 + height ** 2)
+
+print(hypotenus)
+
+#-------------------------------------------------------------------------------------------
+#7. write a python program to get all units of time into seconds
+#
+# days = int(input("Input days: ")) * 3600 * 24
+# hours = int(input("Input hours: ")) * 3600
+# minutes = int(input("Input minutes: ")) * 60
+# seconds = int(input("Input seconds: "))
+#
+# time = days + hours + minutes + seconds
+#
+# print("The  amounts of seconds", time)
+
+#---------------------------------------------------------------------------------------------------------
+# 8. Write a Python program to get file creation and modification date/times
+# import os.path, time
+# print("Last modified : %s" % time.ctime(os.path.getmtime("test.txt")))
+# print("Created: %s " % time.ctime(os.path.getctime("test.txt")))
+
+#----------------------------------------------------------------------------------------------------
+
+#9. write a python program to convert seconds to day, hour, minutes and seconds
+
+# time = float(input("Input time in seconds: "))
+# day = time //(24 *3600)
+# time = time % (24 * 3600)
+# hour = time // 3600
+# time %= 3600
+#
+# minutes = time // 60
+# time %= 60
+# seconds = time
+# print("d:h:m:s -> %d: %d:%d:%d" % (day, hour, minutes, seconds))
+
+#-----------------------------------------------------------------------------------------------------
+
+#10. write a python program to sort files by date
+import glob
+import os
+
+files = glob.glob("*.txt")
+files.sort(key = os.path.getctime)
+print("\n".join(files))
+#--------------------------------------------------------------------------------------------------
+# write a python program to get a directory listing, sorted by creation date.
+from stat import S_ISREG, ST_CTIME, ST_MODE
+import os, sys, time
+
+dir_path = sys.stgv[1] if len(sys.argv) == 2 else r'.'
+#---------------------------------------------------------------------------------------------------
+#12. write a python program to get the deatils of math module
+import math
+math_ls = dir(math)
+print(math_ls)
+ #---------------------------------------------------------------------------------------------------
+
+#13. write a python program to get the copyright information
+
+import sys
+print(sys.copyright)
+#------------------------------------------------------------------------------------------------------
+#14. write a python program to test whether all number of a list is greater than a certain number
+num = [2,3,5]
+print()
+print(all(x >1 for x in num))
+print(all(x>4 for x in num))
+print()
+#--------------------------------------------------------------------------------------------------------
+# 15. write a python program to count the number occurrence of a apecific character in a string.
+s = "The quick brown fox jumps over the lazy dog."
+print(s.count("q"))
+#------------------------------------------------------------------------------------------------
+#16. write a python program to access and print a URL's content to the console
+from http.client import HTTPConnection
+conn = HTTPConnection("example.com")
+conn.request("Get","/")
+result = conn.getresponse()
+contents = result.read()
+print(contents)
+
+#-----------------------------------------------------------------------------------------------------
+# 17. check if a number is positive, negative or zero
+# num = float(input("Input a number : "))
+# if num > 0:
+#     print("It is positive number")
+# elif num == 0:
+#     print("It is zero")
+# else:
+#     print("It is negative number")
+
+# ------------------------------------------------------------------------------------------------------
+# 18. write a python program to get numbers divisible by fifteen from a list using an anonymous function
+num_list = [45, 55, 60, 37, 100, 105, 220]
+# use anonymous function,i.e lambda function
+result = list(filter(lambda x: (x % 15 == 0),num_list))
+print("Numbers divisible by 15 are", result)
+
+#---------------------------------------------------------------------------------------------
+# 19. write a python program to filter the positive numbers from a list
+num = [2,5,6,0,7,-1,9]
+new_num = list(filter(lambda x: x>0, num))
+print(new_num)
+
+#---------------------------------------------------------------------------------------------------------
+# 20. write a python program to determine if variable defined or not .
+
+try:
+    x = 1
+except NameError:
+    prnit("Variable is not defined")
+else:
+    print("Variable is defined")
+try:
+    y
+except NameError:
+    print("Variable is not defined")
+else:
+    print("variable is defined")
+
+#---------------------------------------------------------------------------------------------------------------
+#  21.write a python program to know valid IP
+import socket
+addr = '192.168.0.90'
+try:
+    socket.inet_aton(addr)
+    print("Valid IP")
+except socket.error:
+    print("Invalid IP")
+#---------------------------------------------------------------------------------------------------------------
+# 22. write a python program to create all possible strings by using 'a', 'e','i','o','u'. Use the characters exactly once
+import random
+char_list = ['a','e','i','o','u']
+random.shuffle(char_list)
+print(''.join(char_list))
+#------------------------------------------------------------------------------------------------------------
+#23. write a python program to remove and print every third number from a list of numbers until the list becomes empty
+
+def remove_nums(int_list):
+    #list starts with 0
+    position = 3-1
+    idx = 0
+    len_list = (len(int_list))
+    while len_list > 0:
+        idx = (position + idx)% len_list
+        print(int_list.pop(idx))
+        len_list -= 1
+nums = [10,20,20,30,40,50,60,70,80,80,30,40]
+remove_nums(nums)
+
+
+
+

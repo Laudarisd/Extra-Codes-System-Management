@@ -1,0 +1,207 @@
+<body>
+  <main>
+    <form id="survey-form" action="/my-handling-form-page" method="post">
+    
+  <h1 id="title">Application for permission to drive </h1>
+  <p id="description"><b>Note:</b> Form shuld be submitted directly to the owner. </p>
+ 
+
+<!-- ------------------Personal Details---------------------------- -->
+  <fieldset>
+      <legend>Personal Details</legend   
+    <div>
+      <label id="name-label" for="name">Name:</label>
+      <input type="text" required id="name" name="user_name" placeholder="Enter name here">   </div>
+    <div>
+      <label for="address-label">Address:</label>
+      <input type="Address" id="address" name="Address" placeholder="Enter address here">   </div>
+    <div>
+      <label id="email-label" for="Email">Email:</label>
+      <input type="email" required id="email" name="user_email" placeholder="Enter email here">   </div>
+    <div>
+      <label id="number-label" for="phone">Phone Number:</label>
+      <input type="number" id="number" name="user_name" placeholder="Enter 10 digit number" min="1" max="9">  </div>
+ 
+<p>
+  Upload your photo
+      <button>Attach Files</button></p>
+    </fieldset>   
+    
+<!-- ------------------Radio Buttons-------------------------------- -->
+     <fieldset>
+    
+    <div id="Gender">
+      <label for="Gender">Gender</label>
+      <p>
+        <input type="radio" name="gender" value="male" checked> Male<br>
+        <input type="radio" name="gender" value="female"> Female<br>
+        <input type="radio" name="gender" value="other"> Other
+      </p>     
+    </div>
+    
+ </fieldset>    
+<!-- ------------------Checkboxes-------------------------------- -->
+    <fieldset>
+    <label for="Gender">Be honest while filling following lines: </label>
+      
+      <p>
+  <div id="wrapper">
+  <label for="yes_no_radio"> Do you have license?</label>
+<input type="radio" name="yes_no" checked>Yes</input>
+<input type="radio" name="yes_no">No</input>
+</p>     
+      
+      
+ 
+     <p>  
+  <div id="wrapper">
+  <label for="yes_no_radio"> Are you above 18 years old?</label>
+<input type="radio" name="yes_no" checked>Yes</input>
+<input type="radio" name="yes_no">No</input>
+</p>
+ <p>    
+<label for="yes_no_radio"> Are you an alcoholic?</label>
+<input type="radio" name="yes_no" checked>Yes</input>
+<input type="radio" name="yes_no">No</input>
+</p>      
+ <p>    
+<label for="yes_no_radio"> Do you have job?</label>
+<input type="radio" name="yes_no" checked>Yes</input>
+<input type="radio" name="yes_no">No</input>
+</p>    
+
+<p>    
+<label for="yes_no_radio"> Do you have insurance?</label>
+<input type="radio" name="yes_no" checked>Yes</input>
+<input type="radio" name="yes_no">No</input>
+</p>     
+</div>  
+  </fieldset>    
+ 
+ <!-- -----------------Dropdown menus--------------------------------- -->
+  
+  <fieldset>
+    <div>
+      <label for="purpose">Purpose of riding:</label>
+      <select id="dropdown">
+  <option value="left">To show friends</option>
+  <option value="right">For work</option>
+  <option value="conservative">To travel</option>
+  <option value="nazi">For parents' work</option>
+  </select>
+      </div>
+      </fieldset>
+
+<!-- -----------------Dropdown menus-2--------------------------------- -->
+   <fieldset>
+     <div>
+      <label for="Education">Education Level Completed:</label>
+      <select id="dropdown2">
+  <option value="University">University</option>
+  <option value="College">College</option>
+  <option value="Secondary">High School</option>  
+  <option value="None">None</option>
+  </select>
+    </div>
+  </fieldset>
+ 
+<!------------To attached documents ----------->
+<fieldset> 
+
+<p>Upload a photo of citizenship or passport
+      <button>Attach Files</button></p>
+  </fieldset>    
+
+<!-- --------------------Text Areas------------------------------ -->
+  
+  <fieldset>
+    <legend>Write carefully</legend>
+    <div>
+      <label for="msg"></label>
+      <p> In 200 words or more explain why you want to rent a car.</p>
+      <textarea id="msg" name="user_message" rows="4" cols="50" placeholder="Enter Text Here"></textarea>   </div>
+    <div>
+      <label for="msg">Please upload contact details for 2 references</label><br>
+      <textarea id="msg2" name="user_message" rows="4" cols="50" placeholder="Enter Text Here"></textarea>   </div>
+   
+    
+<div id="submitbutton">
+    <button type="submit" id="submit">Send your application</button>   </div>
+
+
+  </div> 
+  </form>
+  </main>
+  </body>
+
+  -----------------------------------------------------------------------------------------------
+  body {
+  font-family: ' cursive';
+  font-size: 1.2em;
+  background-color: white;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+
+#survey-form {
+  background-color: lightgoldenrodyellow;
+}
+
+form {
+  margin: 0 auto;
+  width: 70%;
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+  
+}
+h1 {
+  font-size: 1.5em;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+fieldset { 
+  border:1px solid lightgray;
+  margin: 10px;
+ }
+
+
+#number {
+  width: 150px;
+}
+
+button {
+  margin: .2em;
+  font-size: 0.6em;
+  text-transform: capitalize;
+  background-color: gray;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 2px;
+  
+}
+textarea {
+  
+  width: 400px;
+  border: 1px solid #999;
+}
+
+input:focus, textarea:focus {
+    border-color: OrangeRed;
+}
+
+textarea {
+   vertical-align: top;
+    height: 5em;
+    resize: vertical;
+}
+
+#submitbutton {
+  display: flex; 
+  justify-content: center;
+}
+
+  

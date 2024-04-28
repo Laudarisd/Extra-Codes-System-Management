@@ -1,0 +1,27 @@
+Q.1. What is list?
+Ans: Lists are mutabhle . They can be edited
+     eg. list = [10, 20]
+     
+Q.2. What are the Tuples?
+Ans: Tuples are immutable. Theay are lists which can't be edited.
+      eg. tup = (10,'A', 20)
+     
+Q.3. What is PEP?
+Ans: PEP - Python Enhancement Proposal.
+
+Q.4. What are the python modules? Give some examples.
+Ans: Python modules are files containing python code. 
+     Which can be variables, functions classes.
+     eg. os, sys, math, date time
+     
+Q.5.     
+     
+ 
+  
+
+
+
+
+
+"""sourceP: https://www.edureka.co/blog/interview-questions/python-interview-questions/"""
+
